@@ -1,177 +1,453 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>AutoMates | AI for Mortgage Lenders</title>-->
+<!--    <link rel="icon" type="image/png" href="./logo-file.png">-->
+<!--    <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">-->
+<!--    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">-->
+
+<!--    <style>-->
+<!--        /* RESET & BASE STYLES */-->
+<!--        * { box-sizing: border-box; margin: 0; padding: 0; }-->
+
+<!--        body {-->
+<!--            background-color: #050505;-->
+<!--            color: #ffffff;-->
+<!--            font-family: 'Inter', sans-serif;-->
+<!--            line-height: 1.6;-->
+<!--            overflow-x: hidden;-->
+<!--        }-->
+
+<!--        a { text-decoration: none; color: inherit; transition: 0.3s; }-->
+<!--        ul { list-style: none; }-->
+
+<!--        .container {-->
+<!--            max-width: 1100px;-->
+<!--            margin: 0 auto;-->
+<!--            padding: 0 20px;-->
+<!--            position: relative;-->
+<!--            z-index: 2;-->
+<!--        }-->
+
+<!--        .text-center { text-align: center; }-->
+<!--        .tag {-->
+<!--            color: #4F8CFF;-->
+<!--            font-size: 0.75rem;-->
+<!--            font-weight: 700;-->
+<!--            letter-spacing: 1px;-->
+<!--            text-transform: uppercase;-->
+<!--            margin-bottom: 1rem;-->
+<!--            display: block;-->
+<!--        }-->
+
+<!--        /* BUTTONS */-->
+<!--        .btn {-->
+<!--            display: inline-block;-->
+<!--            background-color: #2F54EB;-->
+<!--            color: white;-->
+<!--            padding: 12px 32px;-->
+<!--            border-radius: 8px;-->
+<!--            font-weight: 600;-->
+<!--            font-size: 0.95rem;-->
+<!--            cursor: pointer;-->
+<!--            border: none;-->
+<!--            transition: transform 0.2s, background 0.2s;-->
+<!--        }-->
+<!--        .btn:hover {-->
+<!--            background-color: #4066ff;-->
+<!--            transform: translateY(-2px);-->
+<!--        }-->
+
+<!--        /* EFFECTS */-->
+<!--        .glow-bg {-->
+<!--            position: absolute;-->
+<!--            top: -100px;-->
+<!--            left: 50%;-->
+<!--            transform: translateX(-50%);-->
+<!--            width: 800px;-->
+<!--            height: 600px;-->
+<!--            background: radial-gradient(circle, rgba(47, 84, 235, 0.4) 0%, rgba(5, 5, 5, 0) 70%);-->
+<!--            filter: blur(80px);-->
+<!--            z-index: 0;-->
+<!--            pointer-events: none;-->
+<!--        }-->
+
+<!--        /* NAVIGATION */-->
+<!--        nav {-->
+<!--            display: flex;-->
+<!--            justify-content: space-between;-->
+<!--            align-items: center;-->
+<!--            padding: 20px 0;-->
+<!--            font-size: 0.9rem;-->
+<!--            position: relative;-->
+<!--        }-->
+<!--        .logo {-->
+<!--            font-weight: 700;-->
+<!--            font-size: 1.1rem;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            gap: 12px; /* Space between logo image and text */-->
+<!--        }-->
+
+<!--        /* LOGO IMAGE STYLING */-->
+<!--        .nav-logo-img {-->
+<!--            height: 32px; /* Adjust height to match your logo's aspect ratio */-->
+<!--            width: auto;-->
+<!--            display: block;-->
+<!--        }-->
+
+<!--        /* HERO */-->
+<!--        .hero { padding: 100px 0 80px; text-align: center; }-->
+<!--        .hero h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }-->
+<!--        .hero p { color: #a1a1aa; max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem; }-->
+
+<!--        /* SECTION COMMON */-->
+<!--        section { padding: 80px 0; }-->
+
+<!--        /* PROBLEM GRID */-->
+<!--        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px; }-->
+<!--        .problem-list li { padding: 12px 0; border-bottom: 1px solid #222; color: #ccc; display: flex; align-items: center; }-->
+<!--        .problem-list li::before { content: "•"; color: #2F54EB; font-weight: bold; width: 1em; margin-left: -1em; }-->
+<!--        .capacity-stat { margin-top: 30px; padding: 20px; background: #111; border-radius: 8px; border: 1px solid #222; }-->
+
+<!--        /* METRICS TABLE */-->
+<!--        .table-wrapper { overflow-x: auto; margin-top: 40px; border: 1px solid #222; border-radius: 16px; background: #0a0a0a; }-->
+<!--        table { width: 100%; border-collapse: collapse; text-align: left; }-->
+<!--        th { background: #111; color: #4F8CFF; padding: 20px; font-size: 0.8rem; text-transform: uppercase; }-->
+<!--        td { padding: 20px; border-bottom: 1px solid #1a1a1a; }-->
+<!--        .metric-label { font-weight: 600; }-->
+<!--        .improvement-tag { background: rgba(79, 140, 255, 0.1); color: #4F8CFF; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; }-->
+<!--        .disclaimer { margin-top: 20px; font-size: 0.8rem; color: #555; font-style: italic; }-->
+
+<!--        /* HOW IT WORKS */-->
+<!--        .steps-container { display: flex; flex-direction: column; gap: 40px; }-->
+<!--        .step { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 40px; border-radius: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }-->
+<!--        .step-list li { margin-bottom: 8px; color: #ccc; padding-left: 20px; position: relative; }-->
+<!--        .step-list li::before { content: "✓"; color: #2F54EB; position: absolute; left: 0; }-->
+
+<!--        /* TEAM SECTION */-->
+<!--        .team-section { padding: 100px 0; border-top: 1px solid #1a1a1a; background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%); }-->
+<!--        .team-grid { display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; }-->
+<!--        .team-member { display: flex; flex-direction: column; align-items: center; text-align: center; }-->
+<!--        .team-photo {-->
+<!--            width: 160px; height: 160px; border-radius: 50%; object-fit: cover;-->
+<!--            border: 3px solid #2F54EB; margin-bottom: 24px;-->
+<!--            box-shadow: 0 10px 30px rgba(47, 84, 235, 0.2);-->
+<!--        }-->
+<!--        .team-name { font-weight: 700; font-size: 1.5rem; margin-bottom: 4px; }-->
+<!--        .team-role { color: #4F8CFF; font-size: 1rem; font-weight: 500; }-->
+
+<!--        /* TEAM BIO + LINKEDIN */-->
+<!--        .team-bio {-->
+<!--            color: #a1a1aa;-->
+<!--            font-size: 0.95rem;-->
+<!--            margin: 12px 0 16px;-->
+<!--            max-width: 260px;-->
+<!--        }-->
+
+<!--        .linkedin-link {-->
+<!--            display: inline-flex;-->
+<!--            align-items: center;-->
+<!--            gap: 6px;-->
+<!--            color: #4F8CFF;-->
+<!--            font-weight: 600;-->
+<!--            font-size: 0.9rem;-->
+<!--        }-->
+
+<!--        .linkedin-link:hover {-->
+<!--            text-decoration: underline;-->
+<!--        }-->
+
+
+<!--        /* RESPONSIVE */-->
+<!--        @media (max-width: 768px) {-->
+<!--            .hero h1 { font-size: 2.5rem; }-->
+<!--            .problem-grid, .step { grid-template-columns: 1fr; }-->
+<!--            .team-grid { gap: 40px; }-->
+<!--        }-->
+
+
+
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--    <div class="glow-bg"></div>-->
+
+<!--    <div class="container">-->
+<!--        <nav>-->
+<!--            <div class="logo">-->
+<!--                <img src="./logo-file.png" class="nav-logo-img" alt="Logo">-->
+<!--                AutoMates-->
+<!--            </div>-->
+<!--            <div class="nav-links">-->
+<!--                <a href="mailto:automates.co.ai@gmail.com">Contact</a>-->
+<!--            </div>-->
+<!--        </nav>-->
+
+<!--        <header class="hero">-->
+<!--            <h1>AI 'Auto Mates' for<br>Mortgage Lenders</h1>-->
+<!--            <p>We build custom AI workflows, systems, and bots that eliminate the repetitive, time-wasting tasks draining your firm’s billable hours - fully compliant, custom, and risk-free.</p>-->
+<!--            <button class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/automates-co-ai'});return false;">Schedule</button>-->
+<!--        </header>-->
+
+<!--        <section>-->
+<!--            <span class="tag">THE PROBLEM</span>-->
+<!--            <h2>Where Your Hours Are Disappearing</h2>-->
+<!--            <div class="problem-grid">-->
+<!--                <div class="problem-column">-->
+<!--                    <ul class="problem-list">-->
+<!--                        <li>Manual data entry</li>-->
+<!--                        <li>Chasing clients for documents</li>-->
+<!--                        <li>Repeating the same email replies</li>-->
+<!--                        <li>Status updates between departments</li>-->
+<!--                        <li>Moving info between software</li>-->
+<!--                        <li>Billing prep</li>-->
+<!--                        <li>Onboarding forms</li>-->
+<!--                        <li>Creating reports by hand</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <div class="problem-column">-->
+<!--                    <h3>All of that leads to:</h3>-->
+<!--                    <ul class="problem-list" style="border-left: 1px solid #222; padding-left: 20px;">-->
+<!--                        <li>Higher stress</li>-->
+<!--                        <li>Lower profitability</li>-->
+<!--                        <li>Growing backlog</li>-->
+<!--                        <li>Slower turnaround</li>-->
+<!--                        <li>Lost billable hours</li>-->
+<!--                    </ul>-->
+<!--                    <div class="capacity-stat">-->
+<!--                        <strong>Reality Check:</strong><br>-->
+<!--                        <span style="color: #666">You’re probably operating at 60–70% of your real capacity.</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+
+<!--        <section>-->
+<!--            <div class="text-center">-->
+<!--                <span class="tag">ESTIMATED IMPACT</span>-->
+<!--                <h2>Metric Comparison</h2>-->
+<!--                <p style="color: #666;">Based on a 10-person firm, 32 monthly applications.</p>-->
+<!--            </div>-->
+<!--            <div class="table-wrapper">-->
+<!--                <table>-->
+<!--                    <thead>-->
+<!--                        <tr>-->
+<!--                            <th>Metric</th>-->
+<!--                            <th>Before AI</th>-->
+<!--                            <th>After AI</th>-->
+<!--                            <th>Improvement</th>-->
+<!--                        </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                        <tr>-->
+<!--                            <td class="metric-label">Time Per Application</td>-->
+<!--                            <td>6 Hours</td>-->
+<!--                            <td>0.5 Hours</td>-->
+<!--                            <td><span class="improvement-tag">91% Faster</span></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td class="metric-label">Weekly Time Reclaimed</td>-->
+<!--                            <td>48 Hours</td>-->
+<!--                            <td>4 Hours</td>-->
+<!--                            <td><span class="improvement-tag">44 Hours Saved</span></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td class="metric-label">Monthly Time Reclaimed</td>-->
+<!--                            <td>192 Hours</td>-->
+<!--                            <td>16 Hours</td>-->
+<!--                            <td><span class="improvement-tag">176 Hours Saved</span></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td class="metric-label">Document Accuracy</td>-->
+<!--                            <td>Manual/Variable</td>-->
+<!--                            <td>AI-Standardized</td>-->
+<!--                            <td><span class="improvement-tag">100% Reliable</span></td>-->
+<!--                        </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--            <p class="disclaimer text-center">-->
+<!--                *Results are estimates based on previous client workflows and are not guaranteed. Actual results depend on firm-specific systems and adoption.-->
+<!--            </p>-->
+<!--        </section>-->
+
+<!--        <section>-->
+<!--            <span class="tag">HOW IT WORKS</span>-->
+<!--            <div class="steps-container">-->
+<!--                <div class="step">-->
+<!--                    <h3>1. We eliminate your most painful workflow immediately.</h3>-->
+<!--                    <ul class="step-list">-->
+<!--                        <li>1 custom AI Auto Mate</li>-->
+<!--                        <li>50–100 hours saved per month</li>-->
+<!--                        <li>Measurable ROI in under two weeks</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <div class="step">-->
+<!--                    <h3>2. We audit every department and build a full suite.</h3>-->
+<!--                    <ul class="step-list">-->
+<!--                        <li>30–50% more billable hours captured</li>-->
+<!--                        <li>A firm that grows without hiring</li>-->
+<!--                        <li>Smooth handoffs and fewer mistakes</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+
+<!--        <section class="team-section">-->
+<!--            <div class="text-center" style="margin-bottom: 60px;">-->
+<!--                <span class="tag">THE BRAINS</span>-->
+<!--                <h2 style="font-size: 2.5rem;">The Team Behind AutoMates</h2>-->
+<!--            </div>-->
+<!--            <div class="team-grid">-->
+<!--                <div class="team-member">-->
+<!--                    <img src="./david.jpg" alt="David Gabbay" class="team-photo">-->
+<!--                    <span class="team-name">David Gabbay</span>-->
+<!--                    <span class="team-role">Founder</span>-->
+
+<!--                    <p class="team-bio">-->
+<!--                        He is a Computer Science student at the Open University with extensive experience in AI and automation systems, building production-grade solutions across data processing, workflow automation, and system integrations. He has applied this expertise to mortgage and lending workflows, helping financial teams reduce manual work and scale efficiently through AutoMates.-->
+<!--                    </p>-->
+
+<!--                    <a href="https://www.linkedin.com/in/david-lev-gabbay-b93096340/"-->
+<!--                       target="_blank"-->
+<!--                       rel="noopener noreferrer"-->
+<!--                       class="linkedin-link">-->
+<!--                        LinkedIn →-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div class="team-member">-->
+<!--                    <img src="./eitan.jpg" alt="Eitan Jacobs" class="team-photo">-->
+<!--                    <span class="team-name">Eitan Jacobs</span>-->
+<!--                    <span class="team-role">Founder</span>-->
+
+<!--                    <p class="team-bio">-->
+<!--                        Co-Founder at AutoMates and Owner of SheetCEO, with extensive experience in AI, automation, and software development. Entrepreneur focused on building scalable systems that reduce manual work and drive operational efficiency.-->
+<!--                    </p>-->
+
+<!--                    <a href="https://www.linkedin.com/in/eitan-jacobs-586bb827a/"-->
+<!--                       target="_blank"-->
+<!--                       rel="noopener noreferrer"-->
+<!--                       class="linkedin-link">-->
+<!--                        LinkedIn →-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--                <div class="team-member">-->
+<!--                    <img src="./tamir.jpg" alt="Tamir Morris" class="team-photo">-->
+<!--                    <span class="team-name">Tamir Morris</span>-->
+<!--                    <span class="team-role">Strategic Advisor</span>-->
+
+<!--                    <p class="team-bio">-->
+<!--                        Strategic Advisor at AutoMates AI &-->
+<!--Founder of Morris Enterprises, Tamir brings deep execution experience across private credit, lending tech, and go-to-market strategy. He’s built systems that helped direct lenders and fintechs close $170M+ in deal volume, cut underwriting and origination time by 50–70%, and scale to 8-figure revenues leading 14+ lean teams as a sales manager or consultant at previous ventures.-->
+<!--                        ￼-->
+<!--                    </p>-->
+
+<!--                    <a href="https://www.linkedin.com/in/tamir-morris/"-->
+<!--                       target="_blank"-->
+<!--                       rel="noopener noreferrer"-->
+<!--                       class="linkedin-link">-->
+<!--                        LinkedIn →-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+
+<!--        <section class="text-center" style="padding: 100px 0;">-->
+<!--             <h2>Ready to automate?</h2>-->
+<!--             <p style="color: #666; margin: 20px 0 40px;">Get your free Time Leak Audit today.</p>-->
+<!--             <button class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/automates-co-ai'});return false;">Book Your Audit</button>-->
+<!--        </section>-->
+
+<!--        <footer class="text-center" style="padding: 40px 0; border-top: 1px solid #111; opacity: 0.5;">-->
+<!--            <p>© 2025 AutoMates. All rights reserved.</p>-->
+<!--        </footer>-->
+<!--    </div>-->
+
+<!--    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoMates | AI for Mortgage Lenders</title>
-    <link rel="icon" type="image/png" href="./logo-file.png">
+    <title>AutoMates | Enterprise AI for Mortgage Lenders</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
     <style>
-        /* RESET & BASE STYLES */
+        /* BASE STYLES */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            background-color: #050505;
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
-        }
-
+        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
         .text-center { text-align: center; }
-        .tag {
-            color: #4F8CFF;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            display: block;
-        }
+        .tag { color: #4F8CFF; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; display: block; }
 
         /* BUTTONS */
-        .btn {
-            display: inline-block;
-            background-color: #2F54EB;
-            color: white;
-            padding: 12px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            border: none;
-            transition: transform 0.2s, background 0.2s;
-        }
-        .btn:hover {
-            background-color: #4066ff;
-            transform: translateY(-2px);
-        }
+        .btn { display: inline-block; background-color: #2F54EB; color: white; padding: 14px 36px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; transition: 0.3s; text-decoration: none; }
+        .btn:hover { background-color: #4066ff; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(47, 84, 235, 0.3); }
 
-        /* EFFECTS */
-        .glow-bg {
-            position: absolute;
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(47, 84, 235, 0.4) 0%, rgba(5, 5, 5, 0) 70%);
-            filter: blur(80px);
-            z-index: 0;
-            pointer-events: none;
-        }
+        /* GLOWS */
+        .glow-bg { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, rgba(47, 84, 235, 0.25) 0%, rgba(5, 5, 5, 0) 70%); filter: blur(80px); z-index: 0; pointer-events: none; }
 
-        /* NAVIGATION */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            font-size: 0.9rem;
-            position: relative;
-        }
-        .logo {
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 12px; /* Space between logo image and text */
-        }
-
-        /* LOGO IMAGE STYLING */
-        .nav-logo-img {
-            height: 32px; /* Adjust height to match your logo's aspect ratio */
-            width: auto;
-            display: block;
-        }
+        /* NAV */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; }
+        .logo { font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 32px; width: auto; }
 
         /* HERO */
-        .hero { padding: 100px 0 80px; text-align: center; }
-        .hero h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
-        .hero p { color: #a1a1aa; max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem; }
+        .hero { padding: 120px 0 80px; text-align: center; }
+        .hero h1 { font-size: 4rem; font-weight: 700; line-height: 1.1; margin-bottom: 24px; letter-spacing: -2px; }
+        .hero p { color: #a1a1aa; max-width: 750px; margin: 0 auto 40px; font-size: 1.25rem; }
 
-        /* SECTION COMMON */
-        section { padding: 80px 0; }
+        /* TECH BOX */
+        .tech-box { background: linear-gradient(145deg, #0a0a0a, #111); border: 1px solid #222; border-radius: 24px; padding: 60px; margin-top: 60px; border-top: 4px solid #2F54EB; }
+        .step-num { font-weight: 800; color: #2F54EB; font-size: 1.5rem; margin-bottom: 10px; display: block; }
 
-        /* PROBLEM GRID */
-        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px; }
-        .problem-list li { padding: 12px 0; border-bottom: 1px solid #222; color: #ccc; display: flex; align-items: center; }
-        .problem-list li::before { content: "•"; color: #2F54EB; font-weight: bold; width: 1em; margin-left: -1em; }
-        .capacity-stat { margin-top: 30px; padding: 20px; background: #111; border-radius: 8px; border: 1px solid #222; }
+        /* PROCESS GRID */
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
+        .process-card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 40px; border-radius: 16px; transition: 0.3s; position: relative; }
+        .process-card:hover { border-color: #2F54EB; background: #0e0e0e; }
+        .process-card .rank-tag { position: absolute; top: 20px; right: 20px; font-size: 0.7rem; color: #4F8CFF; font-weight: 700; border: 1px solid #4F8CFF; padding: 2px 8px; border-radius: 4px; }
+        .process-card h3 { color: #fff; margin-bottom: 15px; font-size: 1.25rem; padding-right: 60px;}
+        .process-card p { color: #888; font-size: 0.95rem; margin-bottom: 15px; }
+        .process-card .cost-impact { color: #ff4d4f; font-size: 0.85rem; font-weight: 600; border-top: 1px solid #222; padding-top: 15px; display: block; }
 
-        /* METRICS TABLE */
-        .table-wrapper { overflow-x: auto; margin-top: 40px; border: 1px solid #222; border-radius: 16px; background: #0a0a0a; }
+        /* TABLE */
+        .table-wrapper { overflow-x: auto; margin: 40px 0; border: 1px solid #222; border-radius: 16px; background: #0a0a0a; }
         table { width: 100%; border-collapse: collapse; text-align: left; }
         th { background: #111; color: #4F8CFF; padding: 20px; font-size: 0.8rem; text-transform: uppercase; }
         td { padding: 20px; border-bottom: 1px solid #1a1a1a; }
-        .metric-label { font-weight: 600; }
-        .improvement-tag { background: rgba(79, 140, 255, 0.1); color: #4F8CFF; padding: 4px 12px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; }
-        .disclaimer { margin-top: 20px; font-size: 0.8rem; color: #555; font-style: italic; }
+        .improvement-tag { background: rgba(79, 140, 255, 0.1); color: #4F8CFF; padding: 4px 12px; border-radius: 20px; font-weight: 700; }
 
-        /* HOW IT WORKS */
-        .steps-container { display: flex; flex-direction: column; gap: 40px; }
-        .step { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 40px; border-radius: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .step-list li { margin-bottom: 8px; color: #ccc; padding-left: 20px; position: relative; }
-        .step-list li::before { content: "✓"; color: #2F54EB; position: absolute; left: 0; }
-
-        /* TEAM SECTION */
+        /* TEAM SECTION ENHANCEMENTS */
         .team-section { padding: 100px 0; border-top: 1px solid #1a1a1a; background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%); }
-        .team-grid { display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; }
-        .team-member { display: flex; flex-direction: column; align-items: center; text-align: center; }
-        .team-photo {
-            width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
-            border: 3px solid #2F54EB; margin-bottom: 24px;
-            box-shadow: 0 10px 30px rgba(47, 84, 235, 0.2);
-        }
-        .team-name { font-weight: 700; font-size: 1.5rem; margin-bottom: 4px; }
-        .team-role { color: #4F8CFF; font-size: 1rem; font-weight: 500; }
-
-        /* TEAM BIO + LINKEDIN */
-        .team-bio {
-            color: #a1a1aa;
-            font-size: 0.95rem;
-            margin: 12px 0 16px;
-            max-width: 260px;
-        }
-
-        .linkedin-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #4F8CFF;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .linkedin-link:hover {
-            text-decoration: underline;
-        }
-
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 50px; align-items: stretch; }
+        .team-member { background: #0d0d0d; border: 1px solid #1a1a1a; padding: 40px 30px; border-radius: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; transition: 0.3s; }
+        .team-member:hover { transform: translateY(-10px); border-color: #2F54EB; }
+        .team-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid #2F54EB; margin-bottom: 20px; box-shadow: 0 0 20px rgba(47, 84, 235, 0.2); }
+        .team-name { display: block; font-weight: 700; font-size: 1.4rem; color: #ffffff; margin-bottom: 5px; }
+        .team-role { display: block; color: #4F8CFF; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
+        .team-bio { color: #a1a1aa; font-size: 0.92rem; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; text-align: center; }
+        .linkedin-link { display: inline-block; color: #ffffff; font-weight: 600; font-size: 0.85rem; text-decoration: none; padding: 8px 16px; border: 1px solid #333; border-radius: 6px; transition: 0.3s; }
+        .linkedin-link:hover { background: #2F54EB; border-color: #2F54EB; color: #fff; }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .problem-grid, .step { grid-template-columns: 1fr; }
-            .team-grid { gap: 40px; }
+            .tech-box { padding: 30px; }
         }
-
-
-
     </style>
 </head>
 <body>
@@ -181,48 +457,40 @@
     <div class="container">
         <nav>
             <div class="logo">
-                <img src="./logo-file.png" class="nav-logo-img" alt="Logo">
+                <img src="logo.png" alt="AutoMates Logo">
                 AutoMates
             </div>
-            <div class="nav-links">
-                <a href="mailto:automates.co.ai@gmail.com">Contact</a>
-            </div>
+            <a href="mailto:automates.co.ai@gmail.com" class="btn" style="padding: 10px 20px; font-size: 0.85rem;">Get in Touch</a>
         </nav>
 
         <header class="hero">
-            <h1>AI 'Auto Mates' for<br>Mortgage Lenders</h1>
-            <p>We build custom AI workflows, systems, and bots that eliminate the repetitive, time-wasting tasks draining your firm’s billable hours - fully compliant, custom, and risk-free.</p>
-            <button class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/automates-co-ai'});return false;">Schedule</button>
+            <span class="tag">The Future of Origination</span>
+            <h1>Solve the $10,000<br>Cost-Per-Loan Problem</h1>
+            <p>We build custom AI software that eliminates the manual re-keying and document chasing that drains 40% of your staff's day. One click to activate, infinite ROI.</p>
+            <button class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/automates-co-ai'});return false;">Book Your "Time Leak" Audit</button>
         </header>
 
-        <section>
-            <span class="tag">THE PROBLEM</span>
-            <h2>Where Your Hours Are Disappearing</h2>
-            <div class="problem-grid">
-                <div class="problem-column">
-                    <ul class="problem-list">
-                        <li>Manual data entry</li>
-                        <li>Chasing clients for documents</li>
-                        <li>Repeating the same email replies</li>
-                        <li>Status updates between departments</li>
-                        <li>Moving info between software</li>
-                        <li>Billing prep</li>
-                        <li>Onboarding forms</li>
-                        <li>Creating reports by hand</li>
-                    </ul>
-                </div>
-                <div class="problem-column">
-                    <h3>All of that leads to:</h3>
-                    <ul class="problem-list" style="border-left: 1px solid #222; padding-left: 20px;">
-                        <li>Higher stress</li>
-                        <li>Lower profitability</li>
-                        <li>Growing backlog</li>
-                        <li>Slower turnaround</li>
-                        <li>Lost billable hours</li>
-                    </ul>
-                    <div class="capacity-stat">
-                        <strong>Reality Check:</strong><br>
-                        <span style="color: #666">You’re probably operating at 60–70% of your real capacity.</span>
+        <section id="tech">
+            <div class="text-center">
+                <span class="tag">Zero Learning Curve</span>
+                <h2>One Click. Direct Integration.</h2>
+            </div>
+            <div class="tech-box">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+                    <div>
+                        <span class="step-num">01</span>
+                        <h4>Single Sign-On Activation</h4>
+                        <p style="color: #888;">Just sign in via Google or Outlook. The AI instantly syncs with your Email and OneDrive.</p>
+                    </div>
+                    <div>
+                        <span class="step-num">02</span>
+                        <h4>Autonomous Monitoring</h4>
+                        <p style="color: #888;">AI listens for borrower docs and vendor data. It understands context, fills forms, and files docs automatically.</p>
+                    </div>
+                    <div>
+                        <span class="step-num">03</span>
+                        <h4>End-to-End Workflow</h4>
+                        <p style="color: #888;">From POS to LOS, the AI moves data and notifies the right people so your team doesn't have to.</p>
                     </div>
                 </div>
             </div>
@@ -230,141 +498,147 @@
 
         <section>
             <div class="text-center">
-                <span class="tag">ESTIMATED IMPACT</span>
-                <h2>Metric Comparison</h2>
-                <p style="color: #666;">Based on a 10-person firm, 32 monthly applications.</p>
+                <span class="tag">Targeting Critical Pain Points</span>
+                <h2>The Cost of Inefficiency</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <span class="rank-tag">CRITICAL</span>
+                    <h3>Document Collection & Management</h3>
+                    <p>Processors spend 50% of their day chasing missing or wrong docs. Manual errors here trigger investor repurchase demands worth the full loan amount.</p>
+                    <span class="cost-impact">LOSS: $1,500+ Labor Cost / Repurchase Risk</span>
+                </div>
+
+                <div class="process-card">
+                    <span class="rank-tag">HIGH SEVERITY</span>
+                    <h3>Manual Data Entry & Rekeying</h3>
+                    <p>Re-entering data from POS to LOS to AMC portals creates "garbage in" errors. Data propagation across systems is 20% of your total labor cost.</p>
+                    <span class="cost-impact">LOSS: 20% of Total Origination Labor</span>
+                </div>
+
+                <div class="process-card">
+                    <span class="rank-tag">HIGH SEVERITY</span>
+                    <h3>Condition Management & Clearing</h3>
+                    <p>The cycle of submitting and re-issuing conditions accounts for 60% of total cycle time. Borrower confusion leads to excessive delays and lock fees.</p>
+                    <span class="cost-impact">LOSS: 5–15 Extra Business Days / Lock Fees</span>
+                </div>
+
+                <div class="process-card">
+                    <span class="rank-tag">COMPLIANCE</span>
+                    <h3>TRID & Disclosure Engine</h3>
+                    <p>Automatically monitor "Change of Circumstance" triggers. AI initiates re-disclosure workflows to prevent costly tolerance violations.</p>
+                    <span class="cost-impact">LOSS: Regulatory Cures & Penalties</span>
+                </div>
+
+                <div class="process-card">
+                    <span class="rank-tag">EFFICIENCY</span>
+                    <h3>AI-Powered Income Calculation</h3>
+                    <p>Extract data from complex Schedules C/E/F and K-1s. Reduce a 4-hour manual audit to under 5 minutes with AI precision.</p>
+                    <span class="cost-impact">GAIN: 98% Reduction in Processing Time</span>
+                </div>
+
+                <div class="process-card">
+                    <span class="rank-tag">RISK CONTROL</span>
+                    <h3>Post-Closing Quality Control</h3>
+                    <p>Move from random sampling to 100% file auditing. Catch missing signatures before shipping to investors to stop buybacks.</p>
+                    <span class="cost-impact">GAIN: Total Elimination of Repurchase Risk</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="text-center">
+                <span class="tag">The Bottom Line</span>
+                <h2>Financial Comparison</h2>
             </div>
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr>
-                            <th>Metric</th>
-                            <th>Before AI</th>
-                            <th>After AI</th>
-                            <th>Improvement</th>
+                            <th>Operational Area</th>
+                            <th>Manual Workflow</th>
+                            <th>With AutoMates</th>
+                            <th>Profit Impact</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="metric-label">Time Per Application</td>
-                            <td>6 Hours</td>
-                            <td>0.5 Hours</td>
-                            <td><span class="improvement-tag">91% Faster</span></td>
+                            <td>Processing Cycle Time</td>
+                            <td>30-45 Days</td>
+                            <td>12-18 Days</td>
+                            <td><span class="improvement-tag">~60% Faster Close</span></td>
                         </tr>
                         <tr>
-                            <td class="metric-label">Weekly Time Reclaimed</td>
-                            <td>48 Hours</td>
-                            <td>4 Hours</td>
-                            <td><span class="improvement-tag">44 Hours Saved</span></td>
+                            <td>Origination Cost (Labor)</td>
+                            <td>~$10,000 / Loan</td>
+                            <td>~$7,200 / Loan</td>
+                            <td><span class="improvement-tag">28% Cost Reduction</span></td>
                         </tr>
                         <tr>
-                            <td class="metric-label">Monthly Time Reclaimed</td>
-                            <td>192 Hours</td>
-                            <td>16 Hours</td>
-                            <td><span class="improvement-tag">176 Hours Saved</span></td>
-                        </tr>
-                        <tr>
-                            <td class="metric-label">Document Accuracy</td>
-                            <td>Manual/Variable</td>
-                            <td>AI-Standardized</td>
-                            <td><span class="improvement-tag">100% Reliable</span></td>
+                            <td>QC / Compliance Risk</td>
+                            <td>Random / 10% Sampling</td>
+                            <td>100% Automated Audit</td>
+                            <td><span class="improvement-tag">Risk Minimized</span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p class="disclaimer text-center">
-                *Results are estimates based on previous client workflows and are not guaranteed. Actual results depend on firm-specific systems and adoption.
-            </p>
-        </section>
-
-        <section>
-            <span class="tag">HOW IT WORKS</span>
-            <div class="steps-container">
-                <div class="step">
-                    <h3>1. We eliminate your most painful workflow immediately.</h3>
-                    <ul class="step-list">
-                        <li>1 custom AI Auto Mate</li>
-                        <li>50–100 hours saved per month</li>
-                        <li>Measurable ROI in under two weeks</li>
-                    </ul>
-                </div>
-                <div class="step">
-                    <h3>2. We audit every department and build a full suite.</h3>
-                    <ul class="step-list">
-                        <li>30–50% more billable hours captured</li>
-                        <li>A firm that grows without hiring</li>
-                        <li>Smooth handoffs and fewer mistakes</li>
-                    </ul>
-                </div>
-            </div>
+            <p class="text-center" style="font-size: 0.8rem; color: #555; font-style: italic;">*Estimates based on typical 10-person firm performance. Results vary by LOS configuration and team adoption.</p>
         </section>
 
         <section class="team-section">
-            <div class="text-center" style="margin-bottom: 60px;">
-                <span class="tag">THE BRAINS</span>
-                <h2 style="font-size: 2.5rem;">The Team Behind AutoMates</h2>
-            </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="./david.jpg" alt="David Gabbay" class="team-photo">
-                    <span class="team-name">David Gabbay</span>
-                    <span class="team-role">Founder</span>
-
-                    <p class="team-bio">
-                        He is a Computer Science student at the Open University with extensive experience in AI and automation systems, building production-grade solutions across data processing, workflow automation, and system integrations. He has applied this expertise to mortgage and lending workflows, helping financial teams reduce manual work and scale efficiently through AutoMates.
-                    </p>
-
-                    <a href="https://www.linkedin.com/in/david-lev-gabbay-b93096340/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="linkedin-link">
-                        LinkedIn →
-                    </a>
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 60px;">
+                    <span class="tag">THE BRAINS</span>
+                    <h2 style="font-size: 2.5rem;">The Team Behind AutoMates</h2>
                 </div>
-                <div class="team-member">
-                    <img src="./eitan.jpg" alt="Eitan Jacobs" class="team-photo">
-                    <span class="team-name">Eitan Jacobs</span>
-                    <span class="team-role">Founder</span>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="./david.jpg" alt="David Gabbay" class="team-photo">
+                        <span class="team-name">David Gabbay</span>
+                        <span class="team-role">Founder</span>
+                        <p class="team-bio">
+                            Computer Science student at the Open University with extensive experience in AI and automation systems, building production-grade solutions across data processing, workflow automation, and system integrations applied specifically to mortgage lending.
+                        </p>
+                        <a href="https://www.linkedin.com/in/david-lev-gabbay-b93096340/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                            LinkedIn →
+                        </a>
+                    </div>
 
-                    <p class="team-bio">
-                        Co-Founder at AutoMates and Owner of SheetCEO, with extensive experience in AI, automation, and software development. Entrepreneur focused on building scalable systems that reduce manual work and drive operational efficiency.
-                    </p>
+                    <div class="team-member">
+                        <img src="./eitan.jpg" alt="Eitan Jacobs" class="team-photo">
+                        <span class="team-name">Eitan Jacobs</span>
+                        <span class="team-role">Founder</span>
+                        <p class="team-bio">
+                            Co-Founder at AutoMates and Owner of SheetCEO, with extensive experience in AI, automation, and software development. Entrepreneur focused on building scalable systems that reduce manual work and drive operational efficiency.
+                        </p>
+                        <a href="https://www.linkedin.com/in/eitan-jacobs-586bb827a/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                            LinkedIn →
+                        </a>
+                    </div>
 
-                    <a href="https://www.linkedin.com/in/eitan-jacobs-586bb827a/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="linkedin-link">
-                        LinkedIn →
-                    </a>
-                </div>
-                <div class="team-member">
-                    <img src="./tamir.jpg" alt="Tamir Morris" class="team-photo">
-                    <span class="team-name">Tamir Morris</span>
-                    <span class="team-role">Strategic Advisor</span>
-
-                    <p class="team-bio">
-                        Strategic Advisor at AutoMates AI &
-Founder of Morris Enterprises, Tamir brings deep execution experience across private credit, lending tech, and go-to-market strategy. He’s built systems that helped direct lenders and fintechs close $170M+ in deal volume, cut underwriting and origination time by 50–70%, and scale to 8-figure revenues leading 14+ lean teams as a sales manager or consultant at previous ventures.
-                        ￼
-                    </p>
-
-                    <a href="https://www.linkedin.com/in/tamir-morris/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="linkedin-link">
-                        LinkedIn →
-                    </a>
+                    <div class="team-member">
+                        <img src="./tamir.jpg" alt="Tamir Morris" class="team-photo">
+                        <span class="team-name">Tamir Morris</span>
+                        <span class="team-role">Strategic Advisor</span>
+                        <p class="team-bio">
+                            Strategic Advisor at AutoMates AI & Founder of Morris Enterprises. Tamir has built systems that helped direct lenders close $170M+ in volume, cutting origination time by 50–70% and scaling to 8-figure revenues.
+                        </p>
+                        <a href="https://www.linkedin.com/in/tamir-morris-043519183/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                            LinkedIn →
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="text-center" style="padding: 100px 0;">
-             <h2>Ready to automate?</h2>
-             <p style="color: #666; margin: 20px 0 40px;">Get your free Time Leak Audit today.</p>
-             <button class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/automates-co-ai'});return false;">Book Your Audit</button>
+        <section class="text-center" style="padding: 100px 0; background: #0a0a0a; border-radius: 24px; margin-bottom: 60px;">
+             <h2>Ready to recover your billable hours?</h2>
+             <p style="color: #666; margin: 20px 0 40px;">Get a free "Time Leak Audit" specifically for your firm's volume.</p>
+             <button class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/automates-co-ai'});return false;">Schedule Your Audit</button>
         </section>
 
-        <footer class="text-center" style="padding: 40px 0; border-top: 1px solid #111; opacity: 0.5;">
+        <footer class="text-center" style="padding: 40px 0; opacity: 0.5; border-top: 1px solid #111;">
             <p>© 2025 AutoMates. All rights reserved.</p>
         </footer>
     </div>
