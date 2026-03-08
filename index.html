@@ -443,10 +443,31 @@
         .linkedin-link { display: inline-block; color: #ffffff; font-weight: 600; font-size: 0.85rem; text-decoration: none; padding: 8px 16px; border: 1px solid #333; border-radius: 6px; transition: 0.3s; }
         .linkedin-link:hover { background: #2F54EB; border-color: #2F54EB; color: #fff; }
 
+        /* OPT-IN FORM */
+        .optin-form-wrapper { background: #0a0a0a; border: 1px solid #222; border-radius: 20px; padding: 50px 40px; max-width: 520px; margin: 0 auto; }
+        .optin-form-wrapper h3 { font-size: 1.5rem; margin-bottom: 6px; }
+        .optin-form-wrapper .form-subtitle { color: #888; font-size: 0.9rem; margin-bottom: 30px; }
+        .optin-form-wrapper .form-group { margin-bottom: 16px; }
+        .optin-form-wrapper label { display: block; color: #ccc; font-size: 0.85rem; margin-bottom: 6px; font-weight: 500; }
+        .optin-form-wrapper input[type="text"],
+        .optin-form-wrapper input[type="email"],
+        .optin-form-wrapper input[type="tel"] {
+            width: 100%; padding: 12px 16px; background: #111; border: 1px solid #333; border-radius: 8px;
+            color: #fff; font-size: 0.95rem; font-family: 'Inter', sans-serif; transition: border-color 0.3s;
+        }
+        .optin-form-wrapper input:focus { outline: none; border-color: #2F54EB; }
+        .consent-group { margin: 20px 0; }
+        .consent-group label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; color: #999; font-size: 0.8rem; line-height: 1.5; }
+        .consent-group input[type="checkbox"] { margin-top: 3px; accent-color: #2F54EB; flex-shrink: 0; width: 16px; height: 16px; }
+        .optin-disclosures { margin-top: 20px; padding-top: 16px; border-top: 1px solid #222; }
+        .optin-disclosures p { color: #666; font-size: 0.75rem; line-height: 1.6; margin-bottom: 6px; }
+        .optin-disclosures a { color: #4F8CFF; }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .tech-box { padding: 30px; }
+            .optin-form-wrapper { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -468,10 +489,7 @@
             <h1>Stop Processing.<br>Start Lending.</h1>
 <!--            <h1>Solve the $10,000<br>Cost-Per-Loan Problem</h1>-->
             <p>We build custom AI software that eliminates the manual re-keying and document chasing that drains 40% of your staff's day. One click to activate, infinite ROI.</p>
-            <button class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/automates-co-ai'});return false;">Book Your "Time Leak" Audit</button>
-            <p style="color: #555; font-size: 0.75rem; margin-top: 16px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                By booking, you consent to receive business communications from AutoMates. Msg frequency varies. Reply STOP to opt out or HELP for support. <a href="privacy-policy.html" style="color: #4F8CFF;">Privacy Policy</a> &amp; <a href="terms-of-service.html" style="color: #4F8CFF;">Terms of Service</a>.
-            </p>
+            <a href="#opt-in" class="btn">Book Your "Time Leak" Audit</a>
         </header>
 
         <section id="tech">
@@ -636,13 +654,49 @@
             </div>
         </section>
 
-        <section class="text-center" style="padding: 100px 0; background: #0a0a0a; border-radius: 24px; margin-bottom: 60px;">
-             <h2>Ready to recover your billable hours?</h2>
-             <p style="color: #666; margin: 20px 0 40px;">Get a free "Time Leak Audit" specifically for your firm's volume.</p>
-             <button class="btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/automates-co-ai'});return false;">Schedule Your Audit</button>
-             <p style="color: #555; font-size: 0.75rem; margin-top: 20px; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                 By scheduling, you consent to receive occasional business communications from AutoMates via email. Message frequency varies. Reply STOP to unsubscribe or HELP for assistance. View our <a href="privacy-policy.html" style="color: #4F8CFF;">Privacy Policy</a> and <a href="terms-of-service.html" style="color: #4F8CFF;">Terms of Service</a>.
-             </p>
+        <section id="opt-in" style="padding: 100px 0;">
+            <div class="text-center" style="margin-bottom: 40px;">
+                <span class="tag">Get Started</span>
+                <h2 style="font-size: 2rem;">Ready to recover your billable hours?</h2>
+                <p style="color: #666;">Get a free "Time Leak Audit" specifically for your firm's volume.</p>
+            </div>
+
+            <div class="optin-form-wrapper">
+                <h3 class="text-center">AutoMates</h3>
+                <p class="form-subtitle text-center">Book your free Time Leak Audit</p>
+
+                <form id="optin-form" onsubmit="handleOptIn(event)">
+                    <div class="form-group">
+                        <label for="optin-name">Full Name</label>
+                        <input type="text" id="optin-name" name="name" placeholder="John Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="optin-email">Business Email</label>
+                        <input type="email" id="optin-email" name="email" placeholder="john@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="optin-phone">Phone Number</label>
+                        <input type="tel" id="optin-phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                    </div>
+
+                    <div class="consent-group">
+                        <label>
+                            <input type="checkbox" id="sms-consent" name="sms_consent">
+                            <span>I agree to receive SMS/text messages and emails from <strong style="color:#fff;">AutoMates</strong> regarding AI automation services. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help.</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%; text-align: center; padding: 14px;">Schedule Your Audit</button>
+
+                    <div class="optin-disclosures">
+                        <p><strong style="color:#999;">Message Types:</strong> Service updates, consultation follow-ups, product information, and scheduling confirmations via SMS and email.</p>
+                        <p><strong style="color:#999;">Message Frequency:</strong> Message frequency varies based on your engagement. Typically 1-5 messages per month.</p>
+                        <p><strong style="color:#999;">Opt-Out:</strong> Reply STOP to any message to unsubscribe at any time. Reply HELP or contact <a href="mailto:automates.co.ai@gmail.com">automates.co.ai@gmail.com</a> for assistance.</p>
+                        <p><strong style="color:#999;">Rates:</strong> Message and data rates may apply. Check with your carrier for details.</p>
+                        <p style="margin-top: 10px;">By submitting this form, you acknowledge that you have read and agree to our <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-of-service.html">Terms of Service</a>. Consent is not a condition of purchase.</p>
+                    </div>
+                </form>
+            </div>
         </section>
 
         <footer style="padding: 60px 0 40px; border-top: 1px solid #222;">
@@ -677,5 +731,23 @@
     </div>
 
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script>
+        function handleOptIn(e) {
+            e.preventDefault();
+            var name = document.getElementById('optin-name').value;
+            var email = document.getElementById('optin-email').value;
+            var phone = document.getElementById('optin-phone').value;
+            var smsConsent = document.getElementById('sms-consent').checked;
+
+            // Open Calendly with prefilled info
+            Calendly.initPopupWidget({
+                url: 'https://calendly.com/automates-co-ai',
+                prefill: {
+                    name: name,
+                    email: email
+                }
+            });
+        }
+    </script>
 </body>
 </html>
