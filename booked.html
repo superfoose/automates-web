@@ -78,14 +78,8 @@
         .deck-section { padding: 0 0 80px; }
         .deck-section h2 { font-size: 1.5rem; margin-bottom: 8px; }
         .deck-section .subtitle { color: #a1a1aa; margin-bottom: 30px; font-size: 0.95rem; }
-        .deck-card { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 16px; padding: 40px; text-align: center; transition: 0.3s; }
-        .deck-card:hover { border-color: #2F54EB; }
-        .deck-card .deck-icon { width: 56px; height: 56px; margin: 0 auto 20px; background: rgba(47, 84, 235, 0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
-        .deck-card .deck-icon svg { width: 28px; height: 28px; color: #4F8CFF; }
-        .deck-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
-        .deck-card p { color: #a1a1aa; font-size: 0.9rem; margin-bottom: 20px; }
-        .deck-link { display: inline-flex; align-items: center; gap: 8px; color: #4F8CFF; font-weight: 600; font-size: 0.95rem; padding: 10px 24px; border: 1px solid rgba(79, 140, 255, 0.3); border-radius: 8px; transition: 0.3s; }
-        .deck-link:hover { background: rgba(79, 140, 255, 0.1); border-color: #4F8CFF; }
+        .deck-embed { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 16px; overflow: hidden; }
+        .deck-embed iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
 
         /* FOUNDER SECTION */
         .founder-section { padding: 0 0 80px; }
@@ -199,17 +193,8 @@
             <span class="tag">Explore Ahead</span>
             <h2>The Full AutoMates Walkthrough</h2>
             <p class="subtitle">Preview the deck we'll walk through together on your call.</p>
-            <div class="deck-card">
-                <div class="deck-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
-                    </svg>
-                </div>
-                <h3>AutoMates AI for Mortgage Lenders</h3>
-                <p>Our complete walkthrough covering the problem, solution, live demo, and ROI breakdown.</p>
-                <a href="https://docs.google.com/presentation/d/1YtAgVoGWCK8vuDR0TGhGrh5CRYu_7wNr/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer" class="deck-link">
-                    Open in Google Slides &nearr;
-                </a>
+            <div class="deck-embed">
+                <iframe src="https://docs.google.com/presentation/d/1YtAgVoGWCK8vuDR0TGhGrh5CRYu_7wNr/embed?start=false&loop=false&delayms=3000" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
             </div>
         </section>
 
