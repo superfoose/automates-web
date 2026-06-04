@@ -74,8 +74,22 @@
         .stat-value { font-size: 2rem; font-weight: 800; color: #4F8CFF; display: block; margin-bottom: 6px; letter-spacing: -1px; }
         .stat-label { color: #a1a1aa; font-size: 0.8rem; }
 
+        /* DECK SECTION */
+        .deck-section { padding: 0 0 80px; }
+        .deck-section h2 { font-size: 1.5rem; margin-bottom: 8px; }
+        .deck-section .subtitle { color: #a1a1aa; margin-bottom: 30px; font-size: 0.95rem; }
+        .deck-card { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 16px; padding: 40px; text-align: center; transition: 0.3s; }
+        .deck-card:hover { border-color: #2F54EB; }
+        .deck-card .deck-icon { width: 56px; height: 56px; margin: 0 auto 20px; background: rgba(47, 84, 235, 0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+        .deck-card .deck-icon svg { width: 28px; height: 28px; color: #4F8CFF; }
+        .deck-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+        .deck-card p { color: #a1a1aa; font-size: 0.9rem; margin-bottom: 20px; }
+        .deck-link { display: inline-flex; align-items: center; gap: 8px; color: #4F8CFF; font-weight: 600; font-size: 0.95rem; padding: 10px 24px; border: 1px solid rgba(79, 140, 255, 0.3); border-radius: 8px; transition: 0.3s; }
+        .deck-link:hover { background: rgba(79, 140, 255, 0.1); border-color: #4F8CFF; }
+
         /* FOUNDER SECTION */
         .founder-section { padding: 0 0 80px; }
+        .founders-grid { display: flex; flex-direction: column; gap: 20px; }
         .founder-card { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 16px; padding: 40px; display: flex; align-items: center; gap: 30px; }
         .founder-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid #2F54EB; flex-shrink: 0; box-shadow: 0 0 20px rgba(47, 84, 235, 0.2); }
         .founder-info h3 { font-size: 1.2rem; margin-bottom: 2px; }
@@ -103,6 +117,7 @@
             .stats-grid { grid-template-columns: 1fr; }
             .founder-card { flex-direction: column; text-align: center; }
             .founder-card .founder-info { display: flex; flex-direction: column; align-items: center; }
+            .founders-grid { gap: 16px; }
             .step-card { flex-direction: column; gap: 12px; }
         }
     </style>
@@ -179,6 +194,25 @@
             </div>
         </section>
 
+        <!-- PRESENTATION DECK -->
+        <section class="deck-section text-center">
+            <span class="tag">Explore Ahead</span>
+            <h2>The Full AutoMates Walkthrough</h2>
+            <p class="subtitle">Preview the deck we'll walk through together on your call.</p>
+            <div class="deck-card">
+                <div class="deck-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
+                    </svg>
+                </div>
+                <h3>AutoMates AI for Mortgage Lenders</h3>
+                <p>Our complete walkthrough covering the problem, solution, live demo, and ROI breakdown.</p>
+                <a href="https://docs.google.com/presentation/d/1YtAgVoGWCK8vuDR0TGhGrh5CRYu_7wNr/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer" class="deck-link">
+                    Open in Google Slides &nearr;
+                </a>
+            </div>
+        </section>
+
         <!-- CALL AGENDA -->
         <section class="agenda text-center">
             <span class="tag">What to Expect</span>
@@ -233,18 +267,31 @@
         <!-- FOUNDER -->
         <section class="founder-section">
             <div class="text-center" style="margin-bottom: 30px;">
-                <span class="tag">Your Host</span>
+                <span class="tag">Your Hosts</span>
                 <h2 style="font-size: 1.5rem;">Who You'll Be Speaking With</h2>
             </div>
-            <div class="founder-card">
-                <img src="david.jpg" alt="David Gabbay" class="founder-photo">
-                <div class="founder-info">
-                    <h3>David Gabbay</h3>
-                    <span class="role">Founder, AutoMates</span>
-                    <p>David has built production-grade AI solutions for mortgage and lending workflows, helping teams eliminate manual data entry, document chasing, and status updates across their origination pipeline.</p>
-                    <a href="https://www.linkedin.com/in/david-lev-gabbay-b93096340/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
-                        Connect on LinkedIn &rarr;
-                    </a>
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <img src="david.jpg" alt="David Gabbay" class="founder-photo">
+                    <div class="founder-info">
+                        <h3>David Gabbay</h3>
+                        <span class="role">Founder, AutoMates</span>
+                        <p>David has built production-grade AI solutions for mortgage and lending workflows, helping teams eliminate manual data entry, document chasing, and status updates across their origination pipeline.</p>
+                        <a href="https://www.linkedin.com/in/david-lev-gabbay-b93096340/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                            Connect on LinkedIn &rarr;
+                        </a>
+                    </div>
+                </div>
+                <div class="founder-card">
+                    <img src="eitan.jpg" alt="Eitan Jacobs" class="founder-photo">
+                    <div class="founder-info">
+                        <h3>Eitan Jacobs</h3>
+                        <span class="role">Founder, AutoMates</span>
+                        <p>Co-Founder at AutoMates and Owner of SheetCEO, with extensive experience in AI, automation, and software development. Focused on building scalable systems that reduce manual work and drive operational efficiency.</p>
+                        <a href="https://www.linkedin.com/in/eitan-jacobs-586bb827a/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                            Connect on LinkedIn &rarr;
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
