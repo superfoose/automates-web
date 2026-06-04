@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're Booked | AutoMates</title>
+
+    <link rel="icon" type="image/png" href="logo-file.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
+        .text-center { text-align: center; }
+        .tag { color: #4F8CFF; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; display: block; }
+
+        .btn { display: inline-block; background-color: #2F54EB; color: white; padding: 14px 36px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; transition: 0.3s; text-decoration: none; font-size: 1rem; }
+        .btn:hover { background-color: #4066ff; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(47, 84, 235, 0.3); }
+
+        .glow-bg { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, rgba(47, 84, 235, 0.25) 0%, rgba(5, 5, 5, 0) 70%); filter: blur(80px); z-index: 0; pointer-events: none; }
+
+        /* NAV */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; }
+        .logo { font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 32px; width: auto; }
+
+        /* HERO CONFIRMATION */
+        .hero { padding: 100px 0 60px; text-align: center; }
+        .checkmark { width: 80px; height: 80px; border-radius: 50%; background: rgba(47, 84, 235, 0.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; border: 2px solid #2F54EB; }
+        .checkmark svg { width: 40px; height: 40px; color: #2F54EB; }
+        .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1.5px; }
+        .hero p { color: #a1a1aa; max-width: 550px; margin: 0 auto; font-size: 1.1rem; }
+        .hero p strong { color: #fff; }
+
+        /* STEPS SECTION */
+        .steps { padding: 0 0 80px; }
+        .steps-grid { display: flex; flex-direction: column; gap: 20px; }
+        .step-card { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 16px; padding: 30px 35px; display: flex; align-items: flex-start; gap: 20px; transition: 0.3s; }
+        .step-card:hover { border-color: #2F54EB; }
+        .step-num { font-weight: 800; color: #2F54EB; font-size: 1.3rem; flex-shrink: 0; width: 40px; height: 40px; border-radius: 10px; background: rgba(47, 84, 235, 0.1); display: flex; align-items: center; justify-content: center; }
+        .step-content h3 { font-size: 1.1rem; margin-bottom: 6px; }
+        .step-content p { color: #a1a1aa; font-size: 0.95rem; }
+
+        /* VIDEO SECTION */
+        .video-section { padding: 0 0 80px; }
+        .video-section h2 { font-size: 1.5rem; margin-bottom: 8px; }
+        .video-section .subtitle { color: #a1a1aa; margin-bottom: 30px; font-size: 0.95rem; }
+        .video-wrapper { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 16px; overflow: hidden; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative; }
+        .video-wrapper iframe { width: 100%; height: 100%; border: none; }
+        .video-placeholder { text-align: center; color: #555; }
+        .video-placeholder svg { width: 60px; height: 60px; margin-bottom: 12px; opacity: 0.4; }
+        .video-placeholder p { font-size: 0.9rem; }
+
+        /* AGENDA SECTION */
+        .agenda { padding: 0 0 80px; }
+        .agenda h2 { font-size: 1.5rem; margin-bottom: 8px; }
+        .agenda .subtitle { color: #a1a1aa; margin-bottom: 30px; font-size: 0.95rem; }
+        .agenda-list { display: flex; flex-direction: column; gap: 16px; }
+        .agenda-item { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 14px; padding: 24px 30px; display: flex; align-items: flex-start; gap: 18px; }
+        .agenda-num { font-weight: 800; color: #2F54EB; font-size: 1.5rem; flex-shrink: 0; line-height: 1; }
+        .agenda-item h4 { font-size: 1rem; margin-bottom: 4px; }
+        .agenda-item p { color: #a1a1aa; font-size: 0.9rem; }
+
+        /* STATS SECTION */
+        .stats { padding: 0 0 80px; }
+        .stats h2 { font-size: 1.5rem; margin-bottom: 30px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .stat-card { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 14px; padding: 28px 20px; text-align: center; transition: 0.3s; }
+        .stat-card:hover { border-color: #2F54EB; }
+        .stat-value { font-size: 2rem; font-weight: 800; color: #4F8CFF; display: block; margin-bottom: 6px; letter-spacing: -1px; }
+        .stat-label { color: #a1a1aa; font-size: 0.8rem; }
+
+        /* FOUNDER SECTION */
+        .founder-section { padding: 0 0 80px; }
+        .founder-card { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 16px; padding: 40px; display: flex; align-items: center; gap: 30px; }
+        .founder-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid #2F54EB; flex-shrink: 0; box-shadow: 0 0 20px rgba(47, 84, 235, 0.2); }
+        .founder-info h3 { font-size: 1.2rem; margin-bottom: 2px; }
+        .founder-info .role { color: #4F8CFF; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+        .founder-info p { color: #a1a1aa; font-size: 0.9rem; margin-bottom: 14px; }
+        .linkedin-link { display: inline-flex; align-items: center; gap: 6px; color: #fff; font-weight: 600; font-size: 0.85rem; padding: 8px 16px; border: 1px solid #333; border-radius: 6px; transition: 0.3s; }
+        .linkedin-link:hover { background: #2F54EB; border-color: #2F54EB; }
+
+        /* CTA SECTION */
+        .cta-section { padding: 60px 0 80px; text-align: center; border-top: 1px solid #1a1a1a; }
+        .cta-section h2 { font-size: 1.8rem; margin-bottom: 12px; }
+        .cta-section p { color: #a1a1aa; margin-bottom: 30px; }
+
+        /* FOOTER */
+        footer { padding: 40px 0; border-top: 1px solid #1a1a1a; text-align: center; }
+        footer p { color: #555; font-size: 0.8rem; }
+        footer a { color: #4F8CFF; }
+
+        /* DIVIDER */
+        .section-divider { width: 60px; height: 3px; background: #2F54EB; border-radius: 2px; margin: 0 auto 30px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .founder-card { flex-direction: column; text-align: center; }
+            .founder-card .founder-info { display: flex; flex-direction: column; align-items: center; }
+            .step-card { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-bg"></div>
+
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="logo-file.png" alt="AutoMates Logo">
+                AutoMates
+            </a>
+        </nav>
+
+        <!-- HERO / CONFIRMATION -->
+        <header class="hero">
+            <div class="checkmark">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+            </div>
+            <h1>You're On the Calendar</h1>
+            <p>Your <strong>Time Leak Audit</strong> is confirmed. Check your email for a calendar invite with the meeting details.</p>
+        </header>
+
+        <!-- 3 PREP STEPS -->
+        <section class="steps">
+            <div class="text-center" style="margin-bottom: 30px;">
+                <span class="tag">Before Your Call</span>
+                <h2 style="font-size: 1.5rem;">3 Quick Steps to Prepare</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <div class="step-content">
+                        <h3>Add the Call to Your Calendar</h3>
+                        <p>Click the button in your confirmation email or accept the Google Calendar invite so you don't miss it.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <div class="step-content">
+                        <h3>Watch the 60-Second Overview</h3>
+                        <p>A quick walkthrough of what we'll cover on the call, so you can come prepared with questions.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <div class="step-content">
+                        <h3>Be at a Laptop in a Quiet Room</h3>
+                        <p>We'll share our screen to walk through your specific workflow. A laptop with a stable connection makes the most of our time together.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO SECTION -->
+        <section class="video-section text-center">
+            <span class="tag">Quick Overview</span>
+            <h2>A 60-Second Walkthrough from David</h2>
+            <p class="subtitle">See exactly what we'll cover on your Time Leak Audit call.</p>
+            <div class="video-wrapper">
+                <!-- Replace the placeholder below with your actual video embed -->
+                <!-- Example: <iframe src="https://www.loom.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe> -->
+                <div class="video-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+                    </svg>
+                    <p>Video coming soon</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL AGENDA -->
+        <section class="agenda text-center">
+            <span class="tag">What to Expect</span>
+            <h2>Your Call Agenda</h2>
+            <p class="subtitle">Here's exactly what we'll cover in your Time Leak Audit.</p>
+            <div class="agenda-list" style="text-align: left;">
+                <div class="agenda-item">
+                    <span class="agenda-num">1</span>
+                    <div>
+                        <h4>Your Current Workflow Audit</h4>
+                        <p>We'll map out where your team is spending the most time on manual, repetitive tasks - from document chasing to data re-keying.</p>
+                    </div>
+                </div>
+                <div class="agenda-item">
+                    <span class="agenda-num">2</span>
+                    <div>
+                        <h4>Live AI Demo</h4>
+                        <p>See how our AI handles document processing, data extraction, and workflow automation in real-time - specific to mortgage lending.</p>
+                    </div>
+                </div>
+                <div class="agenda-item">
+                    <span class="agenda-num">3</span>
+                    <div>
+                        <h4>Custom ROI Breakdown</h4>
+                        <p>Get a clear picture of hours saved, cost reduction, and timeline to go live based on your firm's loan volume and team size.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KEY STATS -->
+        <section class="stats text-center">
+            <span class="tag">By the Numbers</span>
+            <h2>What Our AI Delivers</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-value">60%</span>
+                    <span class="stat-label">Faster Processing Cycle</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">28%</span>
+                    <span class="stat-label">Origination Cost Reduction</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">176h</span>
+                    <span class="stat-label">Saved Per Month*</span>
+                </div>
+            </div>
+            <p style="color: #555; font-size: 0.75rem; margin-top: 16px; font-style: italic;">*Estimates based on a 10-person firm. Results vary by configuration and adoption.</p>
+        </section>
+
+        <!-- FOUNDER -->
+        <section class="founder-section">
+            <div class="text-center" style="margin-bottom: 30px;">
+                <span class="tag">Your Host</span>
+                <h2 style="font-size: 1.5rem;">Who You'll Be Speaking With</h2>
+            </div>
+            <div class="founder-card">
+                <img src="david.jpg" alt="David Gabbay" class="founder-photo">
+                <div class="founder-info">
+                    <h3>David Gabbay</h3>
+                    <span class="role">Founder, AutoMates</span>
+                    <p>David has built production-grade AI solutions for mortgage and lending workflows, helping teams eliminate manual data entry, document chasing, and status updates across their origination pipeline.</p>
+                    <a href="https://www.linkedin.com/in/david-lev-gabbay-b93096340/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                        Connect on LinkedIn &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Have Questions Before the Call?</h2>
+            <p>Reach out anytime - we're happy to help.</p>
+            <a href="mailto:automates.co.ai@gmail.com" class="btn">Email Us</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 AutoMates. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>
